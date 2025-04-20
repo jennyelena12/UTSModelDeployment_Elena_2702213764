@@ -148,10 +148,10 @@ if submit_button and model is not None:
  
         st.subheader("Prediction Result")
         
-        if prediction[0] == 0:
-            st.error(f"📉 This booking is predicted to be **CANCELED** with {probability[0][0]*100:.2f}% probability.")
+        if prediction[0] == 1:
+            st.error(f"📉 This booking is predicted to be **CANCELED** with {probability[0][1]*100:.2f}% probability.")
         else:
-            st.success(f"✅ This booking is predicted to be **NOT CANCELED** with {probability[0][1]*100:.2f}% probability.")
+            st.success(f"✅ This booking is predicted to be **NOT CANCELED** with {probability[0][0]*100:.2f}% probability.")
             
     except Exception as e:
         st.error(f"Error making prediction: {e}")
